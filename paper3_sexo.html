@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paper 3: Brecha de Género | Suicidio en España 2018-2024</title>
+<script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Open Sans',sans-serif;background:#f8f9fa;color:#2c3e50}.hero{background:linear-gradient(135deg,#7b2d8b,#c77dff);color:white;padding:60px 40px;text-align:center}.hero-content{max-width:900px;margin:0 auto}.paper-num{display:inline-block;background:rgba(255,255,255,0.15);padding:5px 15px;border-radius:20px;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:15px}.hero h1{font-family:'Merriweather',serif;font-size:2.2em;line-height:1.3;margin-bottom:15px}.hero p{opacity:0.85;max-width:650px;margin:0 auto;line-height:1.7}.nav-bar{background:#fff;box-shadow:0 2px 15px rgba(0,0,0,0.08);padding:0 30px;display:flex;overflow-x:auto;position:sticky;top:0;z-index:100}.nav-bar a{padding:15px 18px;text-decoration:none;color:#555;font-size:0.82em;font-weight:600;text-transform:uppercase;letter-spacing:1px;border-bottom:3px solid transparent;white-space:nowrap}.nav-bar a:hover,.nav-bar a.active{color:#7b2d8b;border-bottom-color:#7b2d8b}.container{max-width:1100px;margin:0 auto;padding:40px 20px}.section{background:white;border-radius:12px;padding:35px;margin:25px 0;box-shadow:0 4px 20px rgba(0,0,0,0.06)}.section h2{font-family:'Merriweather',serif;font-size:1.4em;color:#1a1a2e;margin-bottom:10px;padding-bottom:10px;border-bottom:2px solid #f0f0f0}.desc{color:#666;font-size:0.92em;line-height:1.7;margin-bottom:20px}.insight-box{background:#fdf0ff;border:1px solid #e0b0ff;padding:20px;border-radius:10px;margin:15px 0}.insight-box h3{font-size:0.9em;font-weight:700;color:#7b2d8b;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}.insight-box p{font-size:0.88em;color:#555;line-height:1.6}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}.stat-card{background:#f9f0ff;border-radius:10px;padding:20px;text-align:center}.stat-card .num{font-size:2em;font-weight:700;color:#7b2d8b}.stat-card .lbl{font-size:0.8em;color:#888;margin-top:5px}table{width:100%;border-collapse:collapse;font-size:0.85em;margin:15px 0}th{background:#7b2d8b;color:white;padding:10px 12px;text-align:left}td{padding:8px 12px;border-bottom:1px solid #f0f0f0}tr:hover td{background:#fdf0ff}footer{background:#1a1a2e;color:rgba(255,255,255,0.7);padding:30px;text-align:center;margin-top:40px;font-size:0.85em}footer a{color:#7b9ef5;text-decoration:none}</style>
+</head>
+<body>
+<div class="hero"><div class="hero-content">
+<div class="paper-num">⚧ Paper 3 de 6</div>
+<h1>Brecha de Género:<br>Análisis por Sexo 2018–2024</h1>
+<p>Los hombres representan el 74% de las defunciones por suicidio en España. Este paper analiza la brecha de género, su evolución y distribución territorial.</p>
+</div></div>
+<nav class="nav-bar"><a href="index.html">🏠 Inicio</a><a href="paper1_tendencias.html">📈 Tendencias</a><a href="paper2_regiones.html">🗺️ Regiones</a><a href="paper3_sexo.html" class="active">⚧ Sexo</a><a href="paper4_edad.html">👥 Edad</a><a href="paper5_covid.html">🦠 COVID-19</a><a href="paper6_correlaciones.html">🔬 Correlaciones</a></nav>
+<div class="container">
+<div class="section">
+<h2>3.1 Indicadores Clave de Brecha de Género</h2>
+<div class="grid-2" style="margin:20px 0">
+<div class="stat-card"><div class="num">74%</div><div class="lbl">Hombres del total (2023)</div></div>
+<div class="stat-card"><div class="num">2,84:1</div><div class="lbl">Ratio H/M (2023)</div></div>
+<div class="stat-card"><div class="num">12,60</div><div class="lbl">Tasa hombres /100k</div></div>
+<div class="stat-card"><div class="num">4,40</div><div class="lbl">Tasa mujeres /100k</div></div>
+</div>
+<div id="chart_sex_evol" style="height:400px"></div>
+</div>
+<div class="section">
+<h2>3.2 Evolución del Ratio Hombre/Mujer</h2>
+<p class="desc">El ratio entre tasas masculinas y femeninas ha variado entre 2,8 y 3,1 en el período analizado, mostrando una brecha de género estructural y persistente.</p>
+<div id="chart_ratio" style="height:380px"></div>
+<div class="insight-box">
+<h3>💡 Paradoja de Género en el Suicidio</h3>
+<p>El fenómeno conocido como "paradoja de género en el suicidio" se manifiesta claramente en España: las mujeres presentan mayores tasas de ideación y tentativas, pero los hombres consuman el acto en mayor proporción. Esto se atribuye a diferencias en los métodos utilizados y en los patrones de búsqueda de ayuda.</p>
+</div>
+</div>
+<div class="section">
+<h2>3.3 Distribución Proporcional por Sexo y Año</h2>
+<p class="desc">Porcentaje de defunciones correspondiente a hombres y mujeres en cada año del período de estudio.</p>
+<div id="chart_pct" style="height:380px"></div>
+</div>
+<div class="section">
+<h2>3.4 Tasas por Sexo y CCAA (2023)</h2>
+<p class="desc">Comparativa de las tasas de suicidio para hombres y mujeres en cada comunidad autónoma. Las diferencias absolutas varían considerablemente entre regiones.</p>
+<div id="chart_ccaa_sex" style="height:480px"></div>
+</div>
+<div class="section">
+<h2>3.5 Tabla: Defunciones y Tasas por Sexo 2018–2024</h2>
+<table>
+<thead><tr><th>Año</th><th>H. Defunc.</th><th>M. Defunc.</th><th>Tasa H.</th><th>Tasa M.</th><th>Ratio H/M</th><th>% Hombres</th><th>Período</th></tr></thead>
+<tbody>
+<tr><td>2018</td><td>2.650</td><td>889</td><td>11,30</td><td>3,63</td><td>3,11</td><td>74,9%</td><td>Pre-COVID</td></tr>
+<tr><td>2019</td><td>2.771</td><td>900</td><td>11,80</td><td>3,80</td><td>3,10</td><td>75,5%</td><td>Pre-COVID</td></tr>
+<tr><td>2020</td><td>2.930</td><td>1.011</td><td>12,40</td><td>4,10</td><td>3,02</td><td>74,3%</td><td>COVID</td></tr>
+<tr><td>2021</td><td>2.982</td><td>1.021</td><td>12,64</td><td>3,95</td><td>3,20</td><td>74,5%</td><td>Post-COVID</td></tr>
+<tr><td>2022</td><td>3.126</td><td>1.101</td><td>13,34</td><td>4,52</td><td>2,95</td><td>73,9%</td><td>Post-COVID</td></tr>
+<tr><td>2023</td><td>3.044</td><td>1.072</td><td>12,60</td><td>4,40</td><td>2,86</td><td>74,0%</td><td>Post-COVID</td></tr>
+<tr><td>2024</td><td>2.965</td><td>988</td><td>12,20</td><td>3,90</td><td>3,13</td><td>75,0%</td><td>Post-COVID</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<footer><p>Parte de: <a href="index.html">Estadísticas Históricas de Suicidio en España Antes y Después del COVID-19</a></p><p style="margin-top:8px">DOI: <a href="https://doi.org/10.17632/cwm4r6ywsc.2">10.17632/cwm4r6ywsc.2</a> · de la Serna, Juan Moises (2026) · CC BY 4.0</p></footer>
+<script>
+const years=[2018,2019,2020,2021,2022,2023,2024];
+const tasasH=[11.30,11.80,12.40,12.64,13.34,12.60,12.20];
+const tasasM=[3.63,3.80,4.10,3.95,4.52,4.40,3.90];
+const defH=[2650,2771,2930,2982,3126,3044,2965];
+const defM=[889,900,1011,1021,1101,1072,988];
+const ratioHM=[3.11,3.10,3.02,3.20,2.95,2.86,3.13];
+
+Plotly.newPlot('chart_sex_evol',[
+{x:years,y:defH,name:'Hombres',type:'bar',marker:{color:'#e63946',opacity:0.85}},
+{x:years,y:defM,name:'Mujeres',type:'bar',marker:{color:'#7b2d8b',opacity:0.85}},
+{x:years,y:tasasH,name:'Tasa H (eje der.)',type:'scatter',mode:'lines+markers',yaxis:'y2',line:{color:'#c0392b',width:2.5},marker:{size:7}},
+{x:years,y:tasasM,name:'Tasa M (eje der.)',type:'scatter',mode:'lines+markers',yaxis:'y2',line:{color:'#6c3483',width:2.5},marker:{size:7}}
+],{barmode:'group',title:{text:'Defunciones y Tasas por Suicidio según Sexo 2018–2024',font:{family:'Merriweather,serif',size:15}},xaxis:{title:'Año',dtick:1},yaxis:{title:'Número de defunciones'},yaxis2:{title:'Tasa por 100.000',overlaying:'y',side:'right'},legend:{orientation:'h',y:-0.2},paper_bgcolor:'white',plot_bgcolor:'#fafafa',hovermode:'x unified'},{responsive:true});
+
+Plotly.newPlot('chart_ratio',[
+{x:years,y:ratioHM,type:'scatter',mode:'lines+markers',fill:'tozeroy',fillcolor:'rgba(123,45,139,0.08)',line:{color:'#7b2d8b',width:3},marker:{size:9},name:'Ratio H/M'},
+{x:[2018,2024],y:[3,3],name:'Ratio 3:1',type:'scatter',mode:'lines',line:{color:'#888',width:1.5,dash:'dash'},showlegend:true}
+],{title:{text:'Ratio Hombre/Mujer en Tasas de Suicidio 2018–2024',font:{family:'Merriweather,serif',size:15}},xaxis:{title:'Año',dtick:1},yaxis:{title:'Ratio H/M',range:[2.5,3.5]},legend:{orientation:'h',y:-0.2},paper_bgcolor:'white',plot_bgcolor:'#fafafa',annotations:[{x:2021,y:3.20,text:'Máx. ratio: 3,20',showarrow:true,arrowhead:2,ax:50,ay:-30,font:{size:10}}]},{responsive:true});
+
+Plotly.newPlot('chart_pct',[
+{x:years,y:defH.map((h,i)=>parseFloat((100*h/(h+defM[i])).toFixed(1))),name:'Hombres %',type:'bar',marker:{color:'#e63946',opacity:0.85}},
+{x:years,y:defM.map((m,i)=>parseFloat((100*m/(defH[i]+m)).toFixed(1))),name:'Mujeres %',type:'bar',marker:{color:'#7b2d8b',opacity:0.85}}
+],{barmode:'stack',title:{text:'Distribución Proporcional por Sexo 2018–2024 (%)',font:{family:'Merriweather,serif',size:15}},xaxis:{title:'Año',dtick:1},yaxis:{title:'Porcentaje (%)',range:[0,100]},legend:{orientation:'h',y:-0.2},paper_bgcolor:'white',plot_bgcolor:'#fafafa'},{responsive:true});
+
+const ccaa=['Asturias','Galicia','Navarra','Cantabria','Castilla-León','Canarias','Extremadura','Aragón','Murcia','And.','C.Val.','Cataluña','P.Vasco','Madrid'];
+const thCCAA=[22.0,19.5,18.5,17.5,16.0,17.5,16.0,16.5,15.5,14.5,13.5,12.5,11.5,10.0];
+const tmCCAA=[6.5,6.8,7.0,5.0,5.5,5.0,5.5,3.5,4.5,5.0,4.5,4.0,4.5,3.0];
+Plotly.newPlot('chart_ccaa_sex',[
+{y:ccaa,x:thCCAA,name:'Hombres',type:'bar',orientation:'h',marker:{color:'#e63946',opacity:0.85}},
+{y:ccaa,x:tmCCAA,name:'Mujeres',type:'bar',orientation:'h',marker:{color:'#7b2d8b',opacity:0.85}}
+],{barmode:'group',title:{text:'Tasas de Suicidio por Sexo y CCAA (2023) — por 100.000 hab.',font:{family:'Merriweather,serif',size:14}},xaxis:{title:'Tasa por 100.000'},yaxis:{autorange:'reversed'},legend:{orientation:'h',y:-0.15},paper_bgcolor:'white',plot_bgcolor:'#fafafa',margin:{l:130}},{responsive:true});
+</script>
+</body>
+</html>

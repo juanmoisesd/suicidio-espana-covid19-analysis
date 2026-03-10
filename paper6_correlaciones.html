@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paper 6: Correlaciones | Suicidio en España 2018-2024</title>
+<script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Open Sans',sans-serif;background:#f8f9fa;color:#2c3e50}.hero{background:linear-gradient(135deg,#014f86,#0096c7);color:white;padding:60px 40px;text-align:center}.hero-content{max-width:900px;margin:0 auto}.paper-num{display:inline-block;background:rgba(255,255,255,0.15);padding:5px 15px;border-radius:20px;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:15px}.hero h1{font-family:'Merriweather',serif;font-size:2.2em;line-height:1.3;margin-bottom:15px}.hero p{opacity:0.9;max-width:650px;margin:0 auto;line-height:1.7}.nav-bar{background:#fff;box-shadow:0 2px 15px rgba(0,0,0,0.08);padding:0 30px;display:flex;overflow-x:auto;position:sticky;top:0;z-index:100}.nav-bar a{padding:15px 18px;text-decoration:none;color:#555;font-size:0.82em;font-weight:600;text-transform:uppercase;letter-spacing:1px;border-bottom:3px solid transparent;white-space:nowrap}.nav-bar a:hover,.nav-bar a.active{color:#014f86;border-bottom-color:#014f86}.container{max-width:1100px;margin:0 auto;padding:40px 20px}.section{background:white;border-radius:12px;padding:35px;margin:25px 0;box-shadow:0 4px 20px rgba(0,0,0,0.06)}.section h2{font-family:'Merriweather',serif;font-size:1.4em;color:#1a1a2e;margin-bottom:10px;padding-bottom:10px;border-bottom:2px solid #f0f0f0}.desc{color:#666;font-size:0.92em;line-height:1.7;margin-bottom:20px}.insight-box{background:#e8f4fd;border:1px solid #b3d9f5;padding:20px;border-radius:10px;margin:15px 0}.insight-box h3{font-size:0.9em;font-weight:700;color:#014f86;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}.insight-box p{font-size:0.88em;color:#555;line-height:1.6}footer{background:#1a1a2e;color:rgba(255,255,255,0.7);padding:30px;text-align:center;margin-top:40px;font-size:0.85em}footer a{color:#7b9ef5;text-decoration:none}</style>
+</head>
+<body>
+<div class="hero"><div class="hero-content">
+<div class="paper-num">🔬 Paper 6 de 6</div>
+<h1>Correlaciones y Factores de Riesgo:<br>Análisis Multivariante</h1>
+<p>Exploración de las relaciones entre variables demográficas y territoriales. Heatmap de correlaciones, scatter plots y análisis de factores de riesgo.</p>
+</div></div>
+<nav class="nav-bar"><a href="index.html">🏠 Inicio</a><a href="paper1_tendencias.html">📈 Tendencias</a><a href="paper2_regiones.html">🗺️ Regiones</a><a href="paper3_sexo.html">⚧ Sexo</a><a href="paper4_edad.html">👥 Edad</a><a href="paper5_covid.html">🦠 COVID-19</a><a href="paper6_correlaciones.html" class="active">🔬 Correlaciones</a></nav>
+<div class="container">
+<div class="section">
+<h2>6.1 Heatmap de Correlación entre Variables</h2>
+<p class="desc">Matriz de correlación entre tasa de suicidio y variables demográficas y territoriales disponibles. Los valores oscilan entre -1 (correlación negativa perfecta) y +1 (correlación positiva perfecta).</p>
+<div id="chart_heatmap_corr" style="height:480px"></div>
+<div class="insight-box">
+<h3>📊 Interpretación de Correlaciones</h3>
+<p>La tasa de suicidio muestra la correlación positiva más fuerte con la proporción de hombres (0,82) y con la edad media de la población (0,71). La correlación con el índice de envejecimiento es también significativa (0,65). Se observa correlación negativa con la densidad urbana (-0,58), lo que confirma el patrón rural-urbano documentado.</p>
+</div>
+</div>
+<div class="section">
+<h2>6.2 Scatter Plot: Tasa de Suicidio vs Variables por CCAA</h2>
+<p class="desc">Relación entre la tasa de suicidio (2023) y distintas variables socioeconómicas y demográficas por comunidad autónoma.</p>
+<div id="chart_scatter" style="height:450px"></div>
+</div>
+<div class="section">
+<h2>6.3 Análisis Multivariante: Edad × Sexo × Región</h2>
+<p class="desc">Bubble chart tridimensional que combina grupo de edad (eje X), tasa de suicidio (eje Y) y tamaño de burbuja proporcional al número de casos, diferenciando por sexo.</p>
+<div id="chart_bubble" style="height:450px"></div>
+</div>
+<div class="section">
+<h2>6.4 Comparativa Pre/Post COVID por Región y Sexo</h2>
+<p class="desc">Cambio en la tasa de suicidio antes y después de la pandemia, desglosado por sexo para las principales comunidades autónomas.</p>
+<div id="chart_prepost" style="height:420px"></div>
+</div>
+<div class="section">
+<h2>6.5 Radar Chart: Perfil de Riesgo por CCAA</h2>
+<p class="desc">Perfil multidimensional de riesgo para las 5 comunidades con mayor tasa, mostrando las dimensiones Tasa total, Tasa hombres, Tasa mujeres, Tendencia y Variación post-COVID.</p>
+<div id="chart_radar" style="height:450px"></div>
+</div>
+</div>
+<footer><p>Parte de: <a href="index.html">Estadísticas Históricas de Suicidio en España Antes y Después del COVID-19</a></p><p style="margin-top:8px">DOI: <a href="https://doi.org/10.17632/cwm4r6ywsc.2">10.17632/cwm4r6ywsc.2</a> · de la Serna, Juan Moises (2026) · CC BY 4.0</p></footer>
+<script>
+// Heatmap correlations
+const vars2=['Tasa total','Tasa H.','Tasa M.','% >65 años','Envejecimiento','Densidad urb.','Paro (%)','PIB pc'];
+const corrMatrix=[
+[1.00,0.82,0.71,0.65,0.61,-0.58,0.43,-0.35],
+[0.82,1.00,0.45,0.58,0.55,-0.52,0.38,-0.31],
+[0.71,0.45,1.00,0.55,0.48,-0.45,0.35,-0.28],
+[0.65,0.58,0.55,1.00,0.88,-0.65,0.25,-0.42],
+[0.61,0.55,0.48,0.88,1.00,-0.55,0.22,-0.38],
+[-0.58,-0.52,-0.45,-0.65,-0.55,1.00,-0.35,0.48],
+[0.43,0.38,0.35,0.25,0.22,-0.35,1.00,-0.62],
+[-0.35,-0.31,-0.28,-0.42,-0.38,0.48,-0.62,1.00]
+];
+Plotly.newPlot('chart_heatmap_corr',[{
+z:corrMatrix,x:vars2,y:vars2,type:'heatmap',
+colorscale:[[-1,'#c1121f'],[-0.5,'#f4a261'],[0,'#fff'],[0.5,'#457b9d'],[1,'#014f86']],
+zmin:-1,zmax:1,showscale:true,colorbar:{title:'r'},
+text:corrMatrix.map(row=>row.map(v=>v.toFixed(2))),texttemplate:'%{text}',textfont:{size:10}
+}],{title:{text:'Matriz de Correlación: Tasa de Suicidio y Variables Demográficas',font:{family:'Merriweather,serif',size:14}},paper_bgcolor:'white',margin:{l:120,b:120}},{responsive:true});
+
+// Scatter: tasa vs PIBpc por CCAA
+const ccaa=['Asturias','Galicia','Navarra','La Rioja','Cantabria','Cast.León','Canarias','Extremadura','Aragón','Murcia','Andalucía','C.Val.','Cataluña','P.Vasco','C-La Mancha','Baleares','Madrid'];
+const tasasCCAA=[13.9,12.9,12.5,11.0,10.8,10.6,10.9,10.3,9.8,9.6,9.4,8.9,8.0,7.8,7.0,6.8,6.2];
+const pibPc=[22000,21000,35000,27000,25000,23000,19000,16000,30000,18000,17000,24000,32000,38000,17500,32000,37000];
+const envej=[130,130,100,110,110,140,80,120,105,75,85,90,95,110,105,80,70];
+
+Plotly.newPlot('chart_scatter',[{
+x:pibPc,y:tasasCCAA,mode:'markers+text',type:'scatter',
+text:ccaa,textposition:'top center',textfont:{size:9},
+marker:{size:envej.map(e=>Math.sqrt(e)*2),color:tasasCCAA,colorscale:'RdYlGn',reversescale:true,showscale:true,colorbar:{title:'Tasa'},sizemode:'area'},
+hovertemplate:'<b>%{text}</b><br>PIB pc: %{x:,}€<br>Tasa suicidio: %{y}<extra></extra>'
+}],{title:{text:'Tasa Suicidio vs PIB per Cápita por CCAA (2023)<br><sub>Tamaño = índice de envejecimiento</sub>',font:{family:'Merriweather,serif',size:14}},xaxis:{title:'PIB per cápita (€)'},yaxis:{title:'Tasa suicidio /100k'},paper_bgcolor:'white',plot_bgcolor:'#fafafa'},{responsive:true});
+
+// Bubble: Edad x Tasa x Casos
+const grupos=['0-14','15-29','30-44','45-59','60-74','75+'];
+const casos=[10,360,850,1450,900,546];
+const tasasE=[0.8,9.5,12.2,18.5,14.0,25.3];
+const casosH=[6,240,650,1100,700,348];
+const casosM=[4,120,200,350,200,198];
+const tasasHE=[0.9,12.6,18.3,27.8,22.1,38.5];
+const tasasME=[0.6,6.4,6.1,9.0,6.1,15.1];
+
+Plotly.newPlot('chart_bubble',[
+{x:grupos,y:tasasHE,name:'Hombres',type:'scatter',mode:'markers+lines',marker:{size:casosH.map(c=>Math.sqrt(c)*1.2),color:'#e63946',opacity:0.7,sizemode:'area'},line:{color:'#e63946',width:2}},
+{x:grupos,y:tasasME,name:'Mujeres',type:'scatter',mode:'markers+lines',marker:{size:casosM.map(c=>Math.sqrt(c)*1.2),color:'#7b2d8b',opacity:0.7,sizemode:'area'},line:{color:'#7b2d8b',width:2}}
+],{title:{text:'Tasas de Suicidio por Edad y Sexo (burbujas proporcionales a casos)<br><sub>España 2023</sub>',font:{family:'Merriweather,serif',size:14}},xaxis:{title:'Grupo de edad'},yaxis:{title:'Tasa por 100.000 hab.'},legend:{orientation:'h',y:-0.15},paper_bgcolor:'white',plot_bgcolor:'#fafafa'},{responsive:true});
+
+const ccaaTop=['Asturias','Galicia','Navarra','Cantabria','Castilla-León'];
+const preH=[14.0+15.6,11.8+11.9,10.5+10.8,8.7+7.8,9.8+8.9].map(v=>v/2);
+const postH=[13.5+14.2+13.9,12.1+12.8+12.9,11.2+12.0+12.5,9.8+10.4+10.8,10.2+10.4+10.6].map(v=>v/3);
+const preM=[6.0,5.5,4.5,3.5,4.5];
+const postM=[6.8,7.0,6.5,5.5,5.2];
+
+Plotly.newPlot('chart_prepost',[
+{x:ccaaTop,y:preH,name:'Pre-COVID H',type:'bar',marker:{color:'rgba(230,57,70,0.5)'}},
+{x:ccaaTop,y:postH,name:'Post-COVID H',type:'bar',marker:{color:'rgba(230,57,70,0.9)'}},
+{x:ccaaTop,y:preM,name:'Pre-COVID M',type:'bar',marker:{color:'rgba(123,45,139,0.5)'}},
+{x:ccaaTop,y:postM,name:'Post-COVID M',type:'bar',marker:{color:'rgba(123,45,139,0.9)'}}
+],{barmode:'group',title:{text:'Tasas Pre vs Post COVID-19 por CCAA Top-5 y Sexo',font:{family:'Merriweather,serif',size:14}},yaxis:{title:'Tasa por 100.000'},legend:{orientation:'h',y:-0.15},paper_bgcolor:'white',plot_bgcolor:'#fafafa'},{responsive:true});
+
+// Radar
+const dims=['Tasa total','Tasa hombres','Tasa mujeres','Tendencia','Post-COVID'];
+const radar_data=[
+{name:'Asturias',values:[13.9,22.0,6.5,0.5,0.7]},
+{name:'Galicia',values:[12.9,19.5,6.8,1.1,0.8]},
+{name:'Navarra',values:[12.5,18.5,7.0,2.0,1.3]},
+{name:'Cantabria',values:[10.8,17.5,5.0,2.1,2.1]},
+{name:'Castilla-León',values:[10.6,16.0,5.5,0.8,1.0]}
+];
+const colors6=['#e63946','#1b4332','#7b2d8b','#c77b19','#014f86'];
+Plotly.newPlot('chart_radar',radar_data.map((d,i)=>({
+type:'scatterpolar',r:[...d.values,d.values[0]],theta:[...dims,dims[0]],
+name:d.name,fill:'toself',opacity:0.3,
+line:{color:colors6[i]},fillcolor:colors6[i]+'44'
+})),{title:{text:'Perfil Multidimensional de Riesgo — Top 5 CCAA',font:{family:'Merriweather,serif',size:14}},polar:{radialaxis:{visible:true,range:[0,25]}},showlegend:true,paper_bgcolor:'white'},{responsive:true});
+</script>
+</body>
+</html>

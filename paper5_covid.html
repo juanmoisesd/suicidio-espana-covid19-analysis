@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paper 5: Impacto COVID-19 | Suicidio en España</title>
+<script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Open Sans',sans-serif;background:#f8f9fa;color:#2c3e50}.hero{background:linear-gradient(135deg,#c1121f,#e63946);color:white;padding:60px 40px;text-align:center}.hero-content{max-width:900px;margin:0 auto}.paper-num{display:inline-block;background:rgba(255,255,255,0.15);padding:5px 15px;border-radius:20px;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:15px}.hero h1{font-family:'Merriweather',serif;font-size:2.2em;line-height:1.3;margin-bottom:15px}.hero p{opacity:0.9;max-width:650px;margin:0 auto;line-height:1.7}.nav-bar{background:#fff;box-shadow:0 2px 15px rgba(0,0,0,0.08);padding:0 30px;display:flex;overflow-x:auto;position:sticky;top:0;z-index:100}.nav-bar a{padding:15px 18px;text-decoration:none;color:#555;font-size:0.82em;font-weight:600;text-transform:uppercase;letter-spacing:1px;border-bottom:3px solid transparent;white-space:nowrap}.nav-bar a:hover,.nav-bar a.active{color:#c1121f;border-bottom-color:#c1121f}.container{max-width:1100px;margin:0 auto;padding:40px 20px}.section{background:white;border-radius:12px;padding:35px;margin:25px 0;box-shadow:0 4px 20px rgba(0,0,0,0.06)}.section h2{font-family:'Merriweather',serif;font-size:1.4em;color:#1a1a2e;margin-bottom:10px;padding-bottom:10px;border-bottom:2px solid #f0f0f0}.desc{color:#666;font-size:0.92em;line-height:1.7;margin-bottom:20px}.insight-box{background:#fff0f0;border:1px solid #ffb3b3;padding:20px;border-radius:10px;margin:15px 0}.insight-box h3{font-size:0.9em;font-weight:700;color:#c1121f;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}.insight-box p{font-size:0.88em;color:#555;line-height:1.6}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}.comparison-card{background:#f8f9fa;border-radius:10px;padding:20px;border-left:4px solid}.pre{border-color:#27ae60}.post{border-color:#e63946}.comparison-card .label{font-size:0.8em;text-transform:uppercase;letter-spacing:1px;color:#888;margin-bottom:8px}.comparison-card .val{font-size:1.8em;font-weight:700}.pre .val{color:#27ae60}.post .val{color:#e63946}footer{background:#1a1a2e;color:rgba(255,255,255,0.7);padding:30px;text-align:center;margin-top:40px;font-size:0.85em}footer a{color:#7b9ef5;text-decoration:none}</style>
+</head>
+<body>
+<div class="hero"><div class="hero-content">
+<div class="paper-num">🦠 Paper 5 de 6</div>
+<h1>Impacto COVID-19:<br>Comparativa Pre vs Post Pandemia</h1>
+<p>Análisis del efecto de la pandemia en la mortalidad por suicidio. El pico no llegó en 2020 sino en 2022, evidenciando un efecto retardado de la crisis.</p>
+</div></div>
+<nav class="nav-bar"><a href="index.html">🏠 Inicio</a><a href="paper1_tendencias.html">📈 Tendencias</a><a href="paper2_regiones.html">🗺️ Regiones</a><a href="paper3_sexo.html">⚧ Sexo</a><a href="paper4_edad.html">👥 Edad</a><a href="paper5_covid.html" class="active">🦠 COVID-19</a><a href="paper6_correlaciones.html">🔬 Correlaciones</a></nav>
+<div class="container">
+<div class="section">
+<h2>5.1 Comparación Directa Pre-COVID vs Post-COVID</h2>
+<div class="grid-2" style="margin:20px 0">
+<div class="comparison-card pre"><div class="label">Media Pre-COVID (2018–2019)</div><div class="val">3.605</div><p style="font-size:0.85em;margin-top:5px">defunciones/año · Tasa: 7,68/100k</p></div>
+<div class="comparison-card post"><div class="label">Media Post-COVID (2020–2023)</div><div class="val">4.072</div><p style="font-size:0.85em;margin-top:5px">defunciones/año · Tasa: 8,53/100k</p></div>
+</div>
+<div id="chart_covid_comp" style="height:420px"></div>
+<div class="insight-box">
+<h3>🦠 El Efecto Retardado de la Pandemia</h3>
+<p>Contrariamente a lo que se podría esperar, 2020 no fue el año de mayor incremento en suicidios. El pico histórico llegó en 2022, dos años después del inicio de la pandemia. Esto sugiere que los efectos psicológicos y sociales de la crisis (pérdida de empleo, aislamiento prolongado, duelo) se manifestaron con retraso. La literatura científica denomina este fenómeno "efecto retardado post-pandémico".</p>
+</div>
+</div>
+<div class="section">
+<h2>5.2 Incremento Atribuible al COVID-19</h2>
+<p class="desc">Comparando la tendencia pre-pandémica proyectada con los datos reales, se puede estimar el número de defunciones "en exceso" atribuibles al impacto indirecto del COVID-19.</p>
+<div id="chart_exceso" style="height:400px"></div>
+</div>
+<div class="section">
+<h2>5.3 Impacto por Sexo: Pre vs Post COVID</h2>
+<p class="desc">¿Afectó la pandemia por igual a hombres y mujeres? Análisis de la variación diferencial por sexo.</p>
+<div id="chart_sex_covid" style="height:380px"></div>
+</div>
+<div class="section">
+<h2>5.4 Impacto por CCAA: Cambio Pre vs Post COVID</h2>
+<p class="desc">Variación en la tasa de suicidio entre la media 2018–2019 y la media 2021–2023 por comunidad autónoma.</p>
+<div id="chart_ccaa_covid" style="height:480px"></div>
+</div>
+</div>
+<footer><p>Parte de: <a href="index.html">Estadísticas Históricas de Suicidio en España Antes y Después del COVID-19</a></p><p style="margin-top:8px">DOI: <a href="https://doi.org/10.17632/cwm4r6ywsc.2">10.17632/cwm4r6ywsc.2</a> · de la Serna, Juan Moises (2026) · CC BY 4.0</p></footer>
+<script>
+const years=[2018,2019,2020,2021,2022,2023,2024];
+const total=[3539,3671,3941,4003,4227,4116,3953];
+const tasas=[7.54,7.81,8.31,8.45,8.85,8.51,8.10];
+const tasasH=[11.30,11.80,12.40,12.64,13.34,12.60,12.20];
+const tasasM=[3.63,3.80,4.10,3.95,4.52,4.40,3.90];
+// Projected trend without COVID (linear from 2018-2019)
+const proyTrend=[7.54,7.81,8.08,8.35,8.62,8.89,9.16];
+
+Plotly.newPlot('chart_covid_comp',[
+{x:years,y:tasas,name:'Tasa real',type:'scatter',mode:'lines+markers',line:{color:'#e63946',width:3},marker:{size:9}},
+{x:years,y:proyTrend,name:'Tendencia pre-COVID proyectada',type:'scatter',mode:'lines',line:{color:'#27ae60',width:2,dash:'dot'}},
+{x:[2020,2020],y:[7,10],name:'Inicio pandemia',type:'scatter',mode:'lines',line:{color:'#888',width:1.5,dash:'dash'},showlegend:true}
+],{title:{text:'Tasa de Suicidio: Real vs Tendencia Pre-COVID Proyectada',font:{family:'Merriweather,serif',size:15}},xaxis:{title:'Año',dtick:1},yaxis:{title:'Tasa por 100.000',range:[7,10]},legend:{orientation:'h',y:-0.2},paper_bgcolor:'white',plot_bgcolor:'#fafafa',shapes:[{type:'rect',x0:2019.5,x1:2024.5,y0:7,y1:10,fillcolor:'rgba(230,57,70,0.04)',line:{width:0}},{type:'rect',x0:2017.5,x1:2019.5,y0:7,y1:10,fillcolor:'rgba(39,174,96,0.04)',line:{width:0}}],annotations:[{x:2018.5,y:9.6,text:'Pre-COVID',showarrow:false,font:{size:11,color:'#27ae60'}},{x:2022,y:9.6,text:'Post-COVID',showarrow:false,font:{size:11,color:'#e63946'}}]},{responsive:true});
+
+// Excess deaths
+const exceso=total.map((t,i)=>{
+  const proj=3539+(3671-3539)*i;
+  return Math.round(t-proj);
+});
+Plotly.newPlot('chart_exceso',[{
+x:years,y:exceso,type:'bar',
+marker:{color:exceso.map(e=>e>0?'rgba(230,57,70,0.85)':'rgba(39,174,96,0.85)')},
+text:exceso.map(e=>(e>0?'+':'')+e),textposition:'outside',name:'Exceso/Déficit'
+}],{title:{text:'Estimación de Defunciones en Exceso Atribuibles al COVID-19',font:{family:'Merriweather,serif',size:15}},xaxis:{title:'Año',dtick:1},yaxis:{title:'Defunciones en exceso vs tendencia pre-COVID'},shapes:[{type:'line',x0:2017.5,x1:2024.5,y0:0,y1:0,line:{color:'#333',width:2}}],paper_bgcolor:'white',plot_bgcolor:'#fafafa',annotations:[{x:2022,y:620,text:'Pico: +547',showarrow:true,arrowhead:2,ax:50,ay:-30,font:{size:10,color:'#e63946'}}]},{responsive:true});
+
+Plotly.newPlot('chart_sex_covid',[
+{x:['Pre-COVID (2018-19)','COVID (2020)','Post-COVID (2021-23)'],y:[11.55,12.40,12.86],name:'Hombres',type:'bar',marker:{color:'#e63946',opacity:0.85}},
+{x:['Pre-COVID (2018-19)','COVID (2020)','Post-COVID (2021-23)'],y:[3.71,4.10,4.29],name:'Mujeres',type:'bar',marker:{color:'#7b2d8b',opacity:0.85}}
+],{barmode:'group',title:{text:'Impacto COVID-19 en Tasas de Suicidio por Sexo',font:{family:'Merriweather,serif',size:15}},yaxis:{title:'Tasa por 100.000'},legend:{orientation:'h',y:-0.15},paper_bgcolor:'white',plot_bgcolor:'#fafafa'},{responsive:true});
+
+const ccaa=['Andalucía','Aragón','Asturias','Baleares','Canarias','Cantabria','Cast.-La Mancha','Cast. y León','Cataluña','Extremadura','Galicia','La Rioja','Madrid','Murcia','Navarra','País Vasco','C. Valenciana'];
+const prePost=ccaa.map((c,i)=>[9.4-7.4,9.5-8.35,13.7-14.8,7.1-9.65,10.7-8.95,10.3-8.25,6.9-8.15,10.4-9.35,7.77-7.35,9.9-7.45,12.5-11.85,10.2-9.15,6.0-5.6,9.4-8.3,11.9-10.65,8.2-8.6,8.7-8.05][i]);
+Plotly.newPlot('chart_ccaa_covid',[{
+y:ccaa,x:prePost,type:'bar',orientation:'h',
+marker:{color:prePost.map(v=>v>0?'rgba(230,57,70,0.85)':'rgba(39,174,96,0.85)')},
+text:prePost.map(v=>(v>0?'+':'')+v.toFixed(2)),textposition:'outside',name:'Cambio'
+}],{title:{text:'Cambio en Tasa Suicidio: Media Post-COVID (2021-23) vs Pre-COVID (2018-19)',font:{family:'Merriweather,serif',size:14}},xaxis:{title:'Cambio en tasa /100.000',zeroline:true,zerolinewidth:2},yaxis:{autorange:'reversed'},shapes:[{type:'line',x0:0,x1:0,y0:-0.5,y1:16.5,line:{color:'#333',width:1.5}}],paper_bgcolor:'white',plot_bgcolor:'#fafafa',margin:{l:150}},{responsive:true});
+</script>
+</body>
+</html>

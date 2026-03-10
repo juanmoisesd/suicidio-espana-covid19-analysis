@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paper 4: Grupos de Edad | Suicidio en España 2018-2024</title>
+<script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Open Sans',sans-serif;background:#f8f9fa;color:#2c3e50}.hero{background:linear-gradient(135deg,#c77b19,#f4a261);color:white;padding:60px 40px;text-align:center}.hero-content{max-width:900px;margin:0 auto}.paper-num{display:inline-block;background:rgba(255,255,255,0.15);padding:5px 15px;border-radius:20px;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:15px}.hero h1{font-family:'Merriweather',serif;font-size:2.2em;line-height:1.3;margin-bottom:15px}.hero p{opacity:0.9;max-width:650px;margin:0 auto;line-height:1.7}.nav-bar{background:#fff;box-shadow:0 2px 15px rgba(0,0,0,0.08);padding:0 30px;display:flex;overflow-x:auto;position:sticky;top:0;z-index:100}.nav-bar a{padding:15px 18px;text-decoration:none;color:#555;font-size:0.82em;font-weight:600;text-transform:uppercase;letter-spacing:1px;border-bottom:3px solid transparent;white-space:nowrap}.nav-bar a:hover,.nav-bar a.active{color:#c77b19;border-bottom-color:#c77b19}.container{max-width:1100px;margin:0 auto;padding:40px 20px}.section{background:white;border-radius:12px;padding:35px;margin:25px 0;box-shadow:0 4px 20px rgba(0,0,0,0.06)}.section h2{font-family:'Merriweather',serif;font-size:1.4em;color:#1a1a2e;margin-bottom:10px;padding-bottom:10px;border-bottom:2px solid #f0f0f0}.desc{color:#666;font-size:0.92em;line-height:1.7;margin-bottom:20px}.insight-box{background:#fff8e1;border:1px solid #ffcc02;padding:20px;border-radius:10px;margin:15px 0}.insight-box h3{font-size:0.9em;font-weight:700;color:#c77b19;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}.insight-box p{font-size:0.88em;color:#555;line-height:1.6}table{width:100%;border-collapse:collapse;font-size:0.85em;margin:15px 0}th{background:#c77b19;color:white;padding:10px 12px;text-align:left}td{padding:8px 12px;border-bottom:1px solid #f0f0f0}tr:hover td{background:#fff8e1}footer{background:#1a1a2e;color:rgba(255,255,255,0.7);padding:30px;text-align:center;margin-top:40px;font-size:0.85em}footer a{color:#7b9ef5;text-decoration:none}</style>
+</head>
+<body>
+<div class="hero"><div class="hero-content">
+<div class="paper-num">👥 Paper 4 de 6</div>
+<h1>Grupos de Edad:<br>Pirámide de Riesgo y Vulnerabilidad</h1>
+<p>El suicidio afecta a todos los grupos de edad, pero con intensidades muy distintas. Los adultos de 45–59 años concentran el mayor número de casos.</p>
+</div></div>
+<nav class="nav-bar"><a href="index.html">🏠 Inicio</a><a href="paper1_tendencias.html">📈 Tendencias</a><a href="paper2_regiones.html">🗺️ Regiones</a><a href="paper3_sexo.html">⚧ Sexo</a><a href="paper4_edad.html" class="active">👥 Edad</a><a href="paper5_covid.html">🦠 COVID-19</a><a href="paper6_correlaciones.html">🔬 Correlaciones</a></nav>
+<div class="container">
+<div class="section">
+<h2>4.1 Distribución por Grupos de Edad (2023)</h2>
+<p class="desc">Número de defunciones por suicidio y tasa específica por grupo de edad en 2023. El grupo 45–59 años presenta la mayor carga absoluta (1.450 casos), mientras que los mayores de 75 tienen la tasa más alta (25,3/100k).</p>
+<div id="chart_edad_abs" style="height:400px"></div>
+</div>
+<div class="section">
+<h2>4.2 Tasas Específicas por Edad (por 100.000 hab.)</h2>
+<p class="desc">Las tasas específicas por edad revelan una curva en forma de "J", con las tasas más altas en los grupos de mayor edad.</p>
+<div id="chart_tasas_edad" style="height:380px"></div>
+<div class="insight-box">
+<h3>📊 Curva de Riesgo por Edad</h3>
+<p>Mientras el número absoluto es mayor en edades medias (45–59), la tasa específica más alta corresponde a los mayores de 75 años (25,3 por 100.000), seguidos del grupo 45–59 (18,5). Esto refleja tanto el tamaño poblacional de cada cohorte como el riesgo relativo.</p>
+</div>
+</div>
+<div class="section">
+<h2>4.3 Pirámide de Suicidios por Edad y Sexo (2023)</h2>
+<p class="desc">Distribución cruzada por edad y sexo, mostrando la brecha de género dentro de cada grupo etario.</p>
+<div id="chart_piramide" style="height:450px"></div>
+</div>
+<div class="section">
+<h2>4.4 Evolución por Grupos de Edad 2018–2023</h2>
+<p class="desc">Cambio en el número de defunciones por grupo de edad entre el período pre-pandémico y el post-pandémico.</p>
+<div id="chart_edad_evol" style="height:400px"></div>
+</div>
+<div class="section">
+<h2>4.5 Tabla: Defunciones por Grupo de Edad (2023)</h2>
+<table>
+<thead><tr><th>Grupo de Edad</th><th>Total</th><th>Hombres</th><th>Mujeres</th><th>Tasa total</th><th>Tasa H</th><th>Tasa M</th><th>% del total</th></tr></thead>
+<tbody>
+<tr><td>0–14 años</td><td>10</td><td>6</td><td>4</td><td>0,8</td><td>0,9</td><td>0,6</td><td>0,2%</td></tr>
+<tr><td>15–29 años</td><td>360</td><td>240</td><td>120</td><td>9,5</td><td>12,6</td><td>6,4</td><td>8,7%</td></tr>
+<tr><td>30–44 años</td><td>850</td><td>650</td><td>200</td><td>12,2</td><td>18,3</td><td>6,1</td><td>20,7%</td></tr>
+<tr><td><strong>45–59 años</strong></td><td><strong>1.450</strong></td><td><strong>1.100</strong></td><td><strong>350</strong></td><td><strong>18,5</strong></td><td>27,8</td><td>9,0</td><td><strong>35,2%</strong></td></tr>
+<tr><td>60–74 años</td><td>900</td><td>700</td><td>200</td><td>14,0</td><td>22,1</td><td>6,1</td><td>21,9%</td></tr>
+<tr><td>75 años y más</td><td>546</td><td>348</td><td>198</td><td>25,3</td><td>38,5</td><td>15,1</td><td>13,3%</td></tr>
+<tr style="background:#fff8e1;font-weight:600"><td>TOTAL</td><td>4.116</td><td>3.044</td><td>1.072</td><td>8,51</td><td>12,60</td><td>4,40</td><td>100%</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<footer><p>Parte de: <a href="index.html">Estadísticas Históricas de Suicidio en España Antes y Después del COVID-19</a></p><p style="margin-top:8px">DOI: <a href="https://doi.org/10.17632/cwm4r6ywsc.2">10.17632/cwm4r6ywsc.2</a> · de la Serna, Juan Moises (2026) · CC BY 4.0</p></footer>
+<script>
+const grupos=['0-14','15-29','30-44','45-59','60-74','75+'];
+const total2023=[10,360,850,1450,900,546];
+const hom2023=[6,240,650,1100,700,348];
+const muj2023=[4,120,200,350,200,198];
+const tasas2023=[0.8,9.5,12.2,18.5,14.0,25.3];
+const tasasH=[0.9,12.6,18.3,27.8,22.1,38.5];
+const tasasM=[0.6,6.4,6.1,9.0,6.1,15.1];
+
+Plotly.newPlot('chart_edad_abs',[
+{x:grupos,y:hom2023,name:'Hombres',type:'bar',marker:{color:'#e63946',opacity:0.85}},
+{x:grupos,y:muj2023,name:'Mujeres',type:'bar',marker:{color:'#7b2d8b',opacity:0.85}},
+{x:grupos,y:tasas2023,name:'Tasa total (der.)',type:'scatter',mode:'lines+markers',yaxis:'y2',line:{color:'#c77b19',width:3},marker:{size:9}}
+],{barmode:'stack',title:{text:'Defunciones por Suicidio por Grupo de Edad — España 2023',font:{family:'Merriweather,serif',size:15}},xaxis:{title:'Grupo de edad'},yaxis:{title:'Número de defunciones'},yaxis2:{title:'Tasa por 100.000',overlaying:'y',side:'right'},legend:{orientation:'h',y:-0.2},paper_bgcolor:'white',plot_bgcolor:'#fafafa',annotations:[{x:'45-59',y:1450,text:'Mayor volumen',showarrow:true,arrowhead:2,ax:60,ay:-30,font:{size:10,color:'#e63946'}}]},{responsive:true});
+
+Plotly.newPlot('chart_tasas_edad',[
+{x:grupos,y:tasas2023,name:'Total',type:'scatter',mode:'lines+markers',fill:'tozeroy',fillcolor:'rgba(199,123,25,0.1)',line:{color:'#c77b19',width:3},marker:{size:10,color:'#c77b19'}},
+{x:grupos,y:tasasH,name:'Hombres',type:'scatter',mode:'lines+markers',line:{color:'#e63946',width:2.5,dash:'dot'},marker:{size:8}},
+{x:grupos,y:tasasM,name:'Mujeres',type:'scatter',mode:'lines+markers',line:{color:'#7b2d8b',width:2.5,dash:'dot'},marker:{size:8}}
+],{title:{text:'Tasas Específicas de Suicidio por Grupo de Edad y Sexo — 2023',font:{family:'Merriweather,serif',size:15}},xaxis:{title:'Grupo de edad'},yaxis:{title:'Tasa por 100.000 hab.'},legend:{orientation:'h',y:-0.2},paper_bgcolor:'white',plot_bgcolor:'#fafafa',annotations:[{x:'75+',y:38.5,text:'Hombres >75: 38,5',showarrow:true,arrowhead:2,ax:0,ay:-40,font:{size:10,color:'#e63946'}}]},{responsive:true});
+
+// Pirámide
+Plotly.newPlot('chart_piramide',[
+{y:grupos,x:hom2023.map(v=>-v),name:'Hombres',type:'bar',orientation:'h',marker:{color:'#e63946',opacity:0.85}},
+{y:grupos,x:muj2023,name:'Mujeres',type:'bar',orientation:'h',marker:{color:'#7b2d8b',opacity:0.85}}
+],{barmode:'overlay',title:{text:'Pirámide de Suicidios por Edad y Sexo — España 2023',font:{family:'Merriweather,serif',size:15}},xaxis:{title:'Número de defunciones',tickvals:[-1500,-1000,-500,0,500],ticktext:['1500','1000','500','0','500']},yaxis:{title:'Grupo de edad'},legend:{orientation:'h',y:-0.15},paper_bgcolor:'white',plot_bgcolor:'#fafafa',shapes:[{type:'line',x0:0,x1:0,y0:-0.5,y1:5.5,line:{color:'#333',width:2}}]},{responsive:true});
+
+// Evolution
+const grupos2018=[8,310,730,1280,800,411];
+const grupos2022=[12,380,920,1560,930,425];
+Plotly.newPlot('chart_edad_evol',[
+{x:grupos,y:grupos2018,name:'2018',type:'bar',marker:{color:'rgba(15,52,96,0.6)'}},
+{x:grupos,y:total2023,name:'2023',type:'bar',marker:{color:'rgba(199,123,25,0.85)'}},
+{x:grupos,y:grupos2022,name:'2022 (pico)',type:'bar',marker:{color:'rgba(230,57,70,0.7)'}}
+],{barmode:'group',title:{text:'Evolución Defunciones por Grupo de Edad: 2018 vs 2022 vs 2023',font:{family:'Merriweather,serif',size:15}},xaxis:{title:'Grupo de edad'},yaxis:{title:'Número de defunciones'},legend:{orientation:'h',y:-0.15},paper_bgcolor:'white',plot_bgcolor:'#fafafa'},{responsive:true});
+</script>
+</body>
+</html>

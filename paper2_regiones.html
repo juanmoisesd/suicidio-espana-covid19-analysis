@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paper 2: Distribución Regional | Suicidio en España 2018-2024</title>
+<script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Open Sans',sans-serif;background:#f8f9fa;color:#2c3e50}
+.hero{background:linear-gradient(135deg,#1b4332,#40916c);color:white;padding:60px 40px;text-align:center}
+.hero-content{max-width:900px;margin:0 auto}
+.paper-num{display:inline-block;background:rgba(255,255,255,0.15);padding:5px 15px;border-radius:20px;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:15px}
+.hero h1{font-family:'Merriweather',serif;font-size:2.2em;line-height:1.3;margin-bottom:15px}
+.hero p{opacity:0.85;max-width:650px;margin:0 auto;line-height:1.7}
+.nav-bar{background:#fff;box-shadow:0 2px 15px rgba(0,0,0,0.08);padding:0 30px;display:flex;overflow-x:auto;position:sticky;top:0;z-index:100}
+.nav-bar a{padding:15px 18px;text-decoration:none;color:#555;font-size:0.82em;font-weight:600;text-transform:uppercase;letter-spacing:1px;border-bottom:3px solid transparent;white-space:nowrap}
+.nav-bar a:hover,.nav-bar a.active{color:#1b4332;border-bottom-color:#1b4332}
+.container{max-width:1100px;margin:0 auto;padding:40px 20px}
+.section{background:white;border-radius:12px;padding:35px;margin:25px 0;box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+.section h2{font-family:'Merriweather',serif;font-size:1.4em;color:#1a1a2e;margin-bottom:10px;padding-bottom:10px;border-bottom:2px solid #f0f0f0}
+.section .desc{color:#666;font-size:0.92em;line-height:1.7;margin-bottom:20px}
+.insight-box{background:#f0fff4;border:1px solid #c3e6cb;padding:20px;border-radius:10px;margin:15px 0}
+.insight-box h3{font-size:0.9em;font-weight:700;color:#1b4332;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.insight-box p{font-size:0.88em;color:#555;line-height:1.6}
+table{width:100%;border-collapse:collapse;font-size:0.85em;margin:15px 0}
+th{background:#1b4332;color:white;padding:10px 12px;text-align:left;font-size:0.85em}
+td{padding:8px 12px;border-bottom:1px solid #f0f0f0}
+tr:hover td{background:#f0fff4}
+.rank-1{background:#fff3cd!important;font-weight:700}
+.rank-high{color:#e63946;font-weight:600}
+.rank-low{color:#27ae60;font-weight:600}
+footer{background:#1a1a2e;color:rgba(255,255,255,0.7);padding:30px;text-align:center;margin-top:40px;font-size:0.85em}
+footer a{color:#7b9ef5;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="hero">
+<div class="hero-content">
+<div class="paper-num">🗺️ Paper 2 de 6</div>
+<h1>Distribución Regional:<br>Comunidades Autónomas 2018–2023</h1>
+<p>Análisis geográfico de la mortalidad por suicidio en las 19 comunidades autónomas españolas. Ranking, evolución temporal y factores regionales.</p>
+</div>
+</div>
+<nav class="nav-bar">
+<a href="index.html">🏠 Inicio</a>
+<a href="paper1_tendencias.html">📈 Tendencias</a>
+<a href="paper2_regiones.html" class="active">🗺️ Regiones</a>
+<a href="paper3_sexo.html">⚧ Sexo</a>
+<a href="paper4_edad.html">👥 Edad</a>
+<a href="paper5_covid.html">🦠 COVID-19</a>
+<a href="paper6_correlaciones.html">🔬 Correlaciones</a>
+</nav>
+<div class="container">
+<div class="section">
+<h2>2.1 Ranking de Tasas por Comunidad Autónoma (2023)</h2>
+<p class="desc">Tasa de mortalidad por suicidio por 100.000 habitantes en cada comunidad autónoma en 2023. Asturias lidera con 13,9, casi el doble que la media nacional (8,51).</p>
+<div id="chart_ranking" style="height:500px"></div>
+<div class="insight-box">
+<h3>💡 Disparidad Territorial</h3>
+<p>Existe una brecha de 7,2 puntos entre la comunidad con mayor tasa (Asturias, 13,9) y la de menor tasa (Madrid, 6,2). Las comunidades del norte (Asturias, Galicia, Navarra, Cantabria, Castilla y León) presentan consistentemente tasas superiores a la media nacional, mientras que Madrid y Baleares se sitúan significativamente por debajo.</p>
+</div>
+</div>
+<div class="section">
+<h2>2.2 Evolución por CCAA 2018–2023 (Tasas)</h2>
+<p class="desc">Comparativa de la evolución de las tasas de suicidio en todas las comunidades autónomas. Selecciona CCAA en la leyenda para aislar su tendencia.</p>
+<div id="chart_evol" style="height:480px"></div>
+</div>
+<div class="section">
+<h2>2.3 Mapa de Calor: Tasa por CCAA y Año</h2>
+<p class="desc">Visualización matricial que permite identificar comunidades y años con mayor intensidad de suicidio de un solo vistazo.</p>
+<div id="chart_heatmap" style="height:550px"></div>
+</div>
+<div class="section">
+<h2>2.4 Variación de Tasas 2018→2023 por CCAA</h2>
+<p class="desc">Cambio en la tasa de mortalidad entre 2018 y 2023. Muestra qué regiones han empeorado más y cuáles han mejorado.</p>
+<div id="chart_var" style="height:450px"></div>
+</div>
+<div class="section">
+<h2>2.5 Tabla Completa por Comunidad Autónoma</h2>
+<p class="desc">Datos completos de defunciones y tasas para todas las CCAA en los años disponibles.</p>
+<table>
+<thead><tr><th>Ranking</th><th>Comunidad Autónoma</th><th>Tasa 2018</th><th>Tasa 2020</th><th>Tasa 2021</th><th>Tasa 2022</th><th>Tasa 2023</th><th>Defunc. 2023</th><th>Var. 2018→23</th></tr></thead>
+<tbody>
+<tr class="rank-1"><td>1</td><td>Asturias</td><td class="rank-high">14,0</td><td>14,9</td><td>13,5</td><td>14,2</td><td class="rank-high">13,9</td><td>115</td><td>-0,1</td></tr>
+<tr><td>2</td><td>Galicia</td><td>11,8</td><td>12,4</td><td>12,1</td><td>12,8</td><td>12,9</td><td>307</td><td>+1,1</td></tr>
+<tr><td>3</td><td>Navarra</td><td>10,5</td><td>11,2</td><td>11,2</td><td>12,0</td><td>12,5</td><td>85</td><td>+2,0</td></tr>
+<tr><td>4</td><td>Cantabria</td><td>8,7</td><td>10,0</td><td>9,8</td><td>10,4</td><td>10,8</td><td>50</td><td>+2,1</td></tr>
+<tr><td>5</td><td>Castilla y León</td><td>9,8</td><td>9,3</td><td>10,2</td><td>10,4</td><td>10,6</td><td>260</td><td>+0,8</td></tr>
+<tr><td>6</td><td>Canarias</td><td>9,5</td><td>8,8</td><td>10,5</td><td>10,8</td><td>10,9</td><td>265</td><td>+1,4</td></tr>
+<tr><td>7</td><td>Extremadura</td><td>7,7</td><td>8,3</td><td>9,5</td><td>9,9</td><td>10,3</td><td>115</td><td>+2,6</td></tr>
+<tr><td>8</td><td>Aragón</td><td>8,4</td><td>7,8</td><td>9,2</td><td>9,5</td><td>9,8</td><td>130</td><td>+1,4</td></tr>
+<tr><td>9</td><td>Murcia</td><td>8,0</td><td>8,9</td><td>9,2</td><td>9,4</td><td>9,6</td><td>150</td><td>+1,6</td></tr>
+<tr><td>10</td><td>España (media)</td><td>7,54</td><td>8,31</td><td>8,45</td><td>8,85</td><td>8,51</td><td>4.116</td><td>+0,97</td></tr>
+<tr><td>11</td><td>Comunitat Valenciana</td><td>8,0</td><td>8,3</td><td>8,5</td><td>8,7</td><td>8,9</td><td>468</td><td>+0,9</td></tr>
+<tr><td>12</td><td>Andalucía</td><td>7,3</td><td>9,2</td><td>7,8</td><td>8,3</td><td>9,4</td><td>815</td><td>+2,1</td></tr>
+<tr><td>13</td><td>La Rioja</td><td>8,9</td><td>10,0</td><td>9,5</td><td>10,1</td><td>11,0</td><td>35</td><td>+2,1</td></tr>
+<tr><td>14</td><td>Cataluña</td><td>7,1</td><td>7,2</td><td>7,5</td><td>7,8</td><td>8,0</td><td>631</td><td>+0,9</td></tr>
+<tr><td>15</td><td>País Vasco</td><td>8,1</td><td>9,6</td><td>8,9</td><td>9,2</td><td>7,8</td><td>170</td><td>-0,3</td></tr>
+<tr><td>16</td><td>Baleares</td><td>9,1</td><td>9,0</td><td>7,5</td><td>7,9</td><td>6,8</td><td>65</td><td class="rank-low">-2,3</td></tr>
+<tr><td>17</td><td>Madrid</td><td>5,7</td><td>5,8</td><td>5,8</td><td>6,0</td><td class="rank-low">6,2</td><td>418</td><td>+0,5</td></tr>
+<tr><td>18</td><td>Castilla-La Mancha</td><td>6,3</td><td>10,6</td><td>6,8</td><td>7,1</td><td>7,0</td><td>120</td><td>+0,7</td></tr>
+<tr><td>19</td><td>Ceuta</td><td>4,8</td><td>6,0</td><td>6,0</td><td>7,1</td><td>8,2</td><td>7</td><td>+3,4</td></tr>
+<tr><td>20</td><td>Melilla</td><td>4,2</td><td>5,5</td><td>4,5</td><td>5,9</td><td>7,3</td><td>5</td><td>+3,1</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<footer>
+<p>Parte de: <a href="index.html">Estadísticas Históricas de Suicidio en España Antes y Después del COVID-19</a></p>
+<p style="margin-top:8px">DOI: <a href="https://doi.org/10.17632/cwm4r6ywsc.2">10.17632/cwm4r6ywsc.2</a> · de la Serna, Juan Moises (2026) · CC BY 4.0</p>
+</footer>
+<script>
+const ccaa=['Asturias','Galicia','Navarra','La Rioja','Cantabria','Castilla y León','Canarias','Extremadura','Aragón','Murcia','Andalucía','C. Valenciana','Cataluña','País Vasco','Castilla-La Mancha','Baleares','Madrid'];
+const tasas2023=[13.9,12.9,12.5,11.0,10.8,10.6,10.9,10.3,9.8,9.6,9.4,8.9,8.0,7.8,7.0,6.8,6.2];
+const tasas2018=[14.0,11.8,10.5,8.9,8.7,9.8,9.5,7.7,8.4,8.0,7.3,8.0,7.1,8.1,6.3,9.1,5.7];
+const mediaEsp=8.51;
+
+// Chart ranking
+Plotly.newPlot('chart_ranking',[
+{y:ccaa,x:tasas2023,type:'bar',orientation:'h',marker:{color:tasas2023.map(t=>t>mediaEsp?'#e63946':'#27ae60'),opacity:0.85},text:tasas2023.map(t=>t.toFixed(1)),textposition:'outside',name:'Tasa 2023'},
+{y:ccaa,x:Array(ccaa.length).fill(mediaEsp),type:'scatter',mode:'lines',line:{color:'#0f3460',width:2,dash:'dash'},name:'Media España (8,51)'}
+],{title:{text:'Tasa de Mortalidad por Suicidio por CCAA — 2023 (por 100.000 hab.)',font:{family:'Merriweather,serif',size:14}},xaxis:{title:'Tasa por 100.000 hab.'},yaxis:{autorange:'reversed'},paper_bgcolor:'white',plot_bgcolor:'#fafafa',legend:{x:0.7,y:0.1},margin:{l:150}},{responsive:true});
+
+// Heatmap
+const years2=[2018,2019,2020,2021,2022,2023];
+const zData=[
+[14.0,15.6,14.9,13.5,14.2,13.9],
+[11.8,11.9,12.4,12.1,12.8,12.9],
+[10.5,10.8,11.2,11.2,12.0,12.5],
+[8.9,9.4,10.0,9.5,10.1,11.0],
+[8.7,7.8,10.0,9.8,10.4,10.8],
+[9.8,8.9,9.3,10.2,10.4,10.6],
+[9.5,8.4,8.8,10.5,10.8,10.9],
+[7.7,7.2,8.3,9.5,9.9,10.3],
+[8.4,8.3,7.8,9.2,9.5,9.8],
+[8.0,8.6,8.9,9.2,9.4,9.6],
+[7.3,7.5,9.2,7.8,8.3,9.4],
+[8.0,8.1,8.3,8.5,8.7,8.9],
+[7.1,7.6,7.2,7.5,7.8,8.0],
+[8.1,7.4,9.6,8.9,9.2,7.8],
+[6.3,9.0,10.6,6.8,7.1,7.0],
+[9.1,10.2,9.0,7.5,7.9,6.8],
+[5.7,5.5,5.8,5.8,6.0,6.2]
+];
+
+Plotly.newPlot('chart_heatmap',[{
+z:zData,x:years2,y:ccaa,type:'heatmap',colorscale:[
+[0,'#e8f5e9'],[0.3,'#66bb6a'],[0.6,'#ef9a9a'],[1,'#b71c1c']
+],showscale:true,colorbar:{title:'Tasa/100k'},hoverongaps:false,
+text:zData.map(row=>row.map(v=>v.toFixed(1))),texttemplate:'%{text}',textfont:{size:9}
+}],{title:{text:'Mapa de Calor: Tasa de Suicidio por CCAA y Año',font:{family:'Merriweather,serif',size:14}},xaxis:{title:'Año',dtick:1},yaxis:{autorange:'reversed'},paper_bgcolor:'white',margin:{l:150}},{responsive:true});
+
+// Variation chart
+const vars=tasas2023.map((t,i)=>parseFloat((t-tasas2018[i]).toFixed(1)));
+Plotly.newPlot('chart_var',[{
+y:ccaa,x:vars,type:'bar',orientation:'h',
+marker:{color:vars.map(v=>v>0?'#e63946':'#27ae60'),opacity:0.85},
+text:vars.map(v=>(v>0?'+':'')+v),textposition:'outside',name:'Variación'
+}],{title:{text:'Variación Tasa de Suicidio 2018→2023 por Comunidad Autónoma',font:{family:'Merriweather,serif',size:14}},xaxis:{title:'Cambio en tasa por 100.000',zeroline:true,zerolinewidth:2},yaxis:{autorange:'reversed'},paper_bgcolor:'white',plot_bgcolor:'#fafafa',shapes:[{type:'line',x0:0,x1:0,y0:-0.5,y1:16.5,line:{color:'#333',width:1.5}}],margin:{l:150}},{responsive:true});
+
+// Evolution chart
+const colors=['#e63946','#457b9d','#2a9d8f','#e9c46a','#f4a261','#264653','#8338ec','#06d6a0','#118ab2','#ffd166','#ef476f','#06d6a0','#073b4c','#adb5bd','#6d6875','#b5838d','#e5989b'];
+const evols=[
+[14.0,15.6,14.9,13.5,14.2,13.9],
+[11.8,11.9,12.4,12.1,12.8,12.9],
+[10.5,10.8,11.2,11.2,12.0,12.5],
+[9.1,10.2,9.0,7.5,7.9,6.8],
+[5.7,5.5,5.8,5.8,6.0,6.2]
+];
+const ccaaSel=['Asturias','Galicia','Navarra','Baleares','Madrid'];
+Plotly.newPlot('chart_evol',ccaaSel.map((c,i)=>({
+x:[2018,2019,2020,2021,2022,2023],y:evols[i],name:c,type:'scatter',mode:'lines+markers',
+line:{width:2.5,color:colors[i]},marker:{size:8}
+})).concat([{x:[2018,2019,2020,2021,2022,2023],y:[7.54,7.81,8.31,8.45,8.85,8.51],name:'Media España',type:'scatter',mode:'lines',line:{width:2,color:'#333',dash:'dot'}}]),
+{title:{text:'Evolución Tasa Suicidio por CCAA Seleccionadas vs Media España',font:{family:'Merriweather,serif',size:14}},xaxis:{title:'Año',dtick:1},yaxis:{title:'Tasa por 100.000'},paper_bgcolor:'white',plot_bgcolor:'#fafafa',legend:{orientation:'h',y:-0.2},hovermode:'x unified'},{responsive:true});
+</script>
+</body>
+</html>
