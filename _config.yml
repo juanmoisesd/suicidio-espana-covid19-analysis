@@ -1,0 +1,18 @@
+title: "Suicide Statistics in Spain — Pre/Post COVID-19 Analysis"
+description: "Interactive mini-papers: Historical suicide statistics in Spain before and after COVID-19. DOI: 10.17632/cwm4r6ywsc.1"
+author: "Juan Moisés de la Serna Tuya"
+url: "https://juanmoisesd.github.io"
+baseurl: "/suicidio-espana-covid19-analysis"
+theme: minima
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+social:
+  name: Juan Moisés de la Serna Tuya
+  links:
+    - https://orcid.org/0000-0002-8401-8018
+    - https://juanmoisesdelaserna.es
+    - https://github.com/juanmoisesd
+doi: 10.17632/cwm4r6ywsc.1
+show_excerpts: true
