@@ -37,3 +37,12 @@ ORCID: [0000-0002-8401-8018](https://orcid.org/0000-0002-8401-8018)
 ## License
 
 [CC0 1.0 Universal](LICENSE) — Public Domain Dedication.
+
+## Dataset Status
+
+| Field | Value |
+|---|---|
+| Status | 🟢 Published |
+| DOI | [10.17632/cwm4r6ywsc.1](https://doi.org/10.17632/cwm4r6ywsc.1) |
+| Last update | 2026-03-20 |
+| License | CC0 1.0 |
