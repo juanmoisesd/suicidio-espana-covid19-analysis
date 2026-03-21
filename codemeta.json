@@ -1,14 +1,18 @@
 {
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
-  "@type": "Dataset",
-  "name": "Suicide Statistics in Spain \u2014 Pre/Post COVID-19 Analysis",
+  "@type": "SoftwareSourceCode",
+  "name": "Interactive mini-papers: Historical suicide statistics in Spain before and after COVID-19. DOI: 10.17632/cwm4r6ywsc.1",
   "description": "Interactive mini-papers: Historical suicide statistics in Spain before and after COVID-19. DOI: 10.17632/cwm4r6ywsc.1",
-  "identifier": "10.17632/cwm4r6ywsc.1",
-  "url": "https://doi.org/10.17632/cwm4r6ywsc.1",
+  "url": "https://github.com/juanmoisesd/suicidio-espana-covid19-analysis",
+  "codeRepository": "https://github.com/juanmoisesd/suicidio-espana-covid19-analysis",
+  "dateCreated": "2026-03-20",
+  "dateModified": "2026-03-20",
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "version": "1.0.0",
   "author": [
     {
       "@type": "Person",
-      "givenName": "Juan Mois\u00e9s",
+      "givenName": "Juan Moisés",
       "familyName": "de la Serna Tuya",
       "@id": "https://orcid.org/0000-0002-8401-8018",
       "affiliation": {
@@ -18,18 +22,25 @@
       "email": "juanmoises.delaserna@unir.net"
     }
   ],
-  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
   "keywords": [
-    "suicide",
-    "spain",
     "covid19",
-    "mental-health",
     "dashboard",
+    "epidemiology",
+    "mental-health",
     "open-data",
-    "epidemiology"
+    "spain",
+    "suicide"
   ],
-  "datePublished": "2026-03-20",
-  "version": "1.0",
-  "programmingLanguage": "Python",
-  "softwareVersion": "1.0"
+  "programmingLanguage": "HTML",
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "Juan Moisés",
+      "familyName": "de la Serna Tuya"
+    }
+  ],
+  "funder": {
+    "@type": "Organization",
+    "name": "Universidad Internacional de La Rioja (UNIR)"
+  }
 }
