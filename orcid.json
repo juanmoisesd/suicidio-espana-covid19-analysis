@@ -1,0 +1,16 @@
+{
+  "orcid": "0000-0002-8401-8018",
+  "name": "Juan Moisés de la Serna Tuya",
+  "affiliation": "Universidad Internacional de La Rioja (UNIR)",
+  "email": "juanmoises.delaserna@unir.net",
+  "website": "https://juanmoisesdelaserna.es",
+  "profile": "https://orcid.org/0000-0002-8401-8018",
+  "works": [
+    {
+      "title": "Interactive mini-papers: Historical suicide statistics in Spain before and after COVID-19. DOI: 10.17632/cwm4r6ywsc.1",
+      "type": "dataset",
+      "url": "https://github.com/juanmoisesd/suicidio-espana-covid19-analysis",
+      "year": "2026"
+    }
+  ]
+}
