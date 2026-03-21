@@ -1,0 +1,37 @@
+{
+  "name": "suicidio-espana-covid19-analysis",
+  "title": "Interactive mini-papers: Historical suicide statistics in Spain before and after COVID-19. DOI: 10.17632/cwm4r6ywsc.1",
+  "description": "Interactive mini-papers: Historical suicide statistics in Spain before and after COVID-19. DOI: 10.17632/cwm4r6ywsc.1",
+  "version": "1.0.0",
+  "licenses": [
+    {
+      "name": "CC0-1.0",
+      "title": "CC0 1.0 Universal",
+      "path": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "Juan Moisés de la Serna Tuya",
+      "path": "https://orcid.org/0000-0002-8401-8018",
+      "role": "author",
+      "organization": "Universidad Internacional de La Rioja (UNIR)"
+    }
+  ],
+  "keywords": [
+    "covid19",
+    "dashboard",
+    "epidemiology",
+    "mental-health",
+    "open-data",
+    "spain",
+    "suicide"
+  ],
+  "sources": [
+    {
+      "title": "Compiled from public sources",
+      "path": "https://github.com/juanmoisesd/suicidio-espana-covid19-analysis"
+    }
+  ],
+  "created": "2026-03-20"
+}
