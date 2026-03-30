@@ -1,7 +1,8 @@
 cff-version: 1.2.0
-message: "If you use this software/dataset, please cite it as below."
+message: "If you use this dataset, please cite it as below."
 type: dataset
 title: "Interactive mini-papers: Historical suicide statistics in Spain before and after COVID-19. DOI: 10.17632/cwm4r6ywsc.1"
+abstract: "Interactive mini-papers: Historical suicide statistics in Spain before and after COVID-19. DOI: 10.17632/cwm4r6ywsc.1"
 authors:
   - family-names: "de la Serna Tuya"
     given-names: "Juan Moisés"
@@ -10,7 +11,6 @@ authors:
     email: "juanmoises.delaserna@unir.net"
 repository-code: "https://github.com/juanmoisesd/suicidio-espana-covid19-analysis"
 url: "https://juanmoisesd.github.io/suicidio-espana-covid19-analysis/"
-abstract: "Interactive mini-papers: Historical suicide statistics in Spain before and after COVID-19. DOI: 10.17632/cwm4r6ywsc.1"
 keywords:
   - open-data
   - dataset
@@ -19,6 +19,7 @@ keywords:
 license: CC0-1.0
 version: "1.0.0"
 date-released: "2026-03-20"
+doi: "10.5281/zenodo.19145316"
 references:
   - type: dataset
     title: "Open Research Collection — Juan Moisés de la Serna Tuya"
